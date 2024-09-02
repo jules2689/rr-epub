@@ -23,7 +23,7 @@ class Epub
 
     gepub_book.add_creator(book.author, display_seq: 1)
 
-    ext_name = File.extname(URI(book.cover_image_url).path)[1..-1]
+    ext_name = File.extname(URI(book.cover_image_url).path || "")[1..-1]
     puts "Downloading cover image: #{book.cover_image_url} (#{ext_name})"
     uri = URI.parse(book.cover_image_url)
     gepub_book.add_item("img/cover_img.#{ext_name}", content: uri.open).cover_image
