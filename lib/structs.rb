@@ -12,8 +12,14 @@ module Structs
   end
   
   class Rating < T::Struct
+    extend T::Sig
     const :rating, Float
     const :base, Float
+
+    sig { returns(String) }
+    def to_s
+      "#{rating} / #{base}"
+    end
   end
   
   class Book < T::Struct

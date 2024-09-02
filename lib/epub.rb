@@ -37,6 +37,7 @@ class Epub
         </head>
         <body>
           <h1>#{book.title}</h1>
+          <h3>by #{book.author} <small>#{book.rating}</small></h3>
           <img src="../img/cover_img.#{ext_name}" />
         </body>
       </html>

@@ -31,7 +31,7 @@ class Main
       puts CLI::UI.fmt("{{bold:Author:}} #{book.author}")
       puts CLI::UI.fmt("{{bold:Description:}} #{book.description[0..100]}...")
       puts CLI::UI.fmt("{{bold:# Chapters:}} #{book.chapters.length}")
-      puts CLI::UI.fmt("{{bold:Rating:}} #{book.rating.rating} / #{book.rating.base}")
+      puts CLI::UI.fmt("{{bold:Rating:}} #{book.rating}")
 
       CLI::UI::Frame.divider("Epub Generation")
       Epub.generate_book(book)
